@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>NRP</th>
+        <th>Nama</th>
+        <th>ID Mapel</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        ajax: 'http://localhost:5000/siswa/nrp/00100000000001',
+        columns: [
+          {data: 'nrp'},
+          {data: 'nama', orderable: false, searchable: false},
+          {data: 'id_mapel', searchable: false},
+          {data: 'score', orderable: false, searchable: false},
+        ],
+      });
+    });
+  </script>
+{% endblock %}

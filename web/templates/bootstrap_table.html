@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table cell-border">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">NRP</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Kota</th>
+        <th scope="col">Fisika</th>
+        <th scope="col">Kimia</th>
+        <th scope="col">Matematika</th>
+        <th scope="col">Biologi</th>
+        <th scope="col">Agama</th>
+        <th scope="col">Bahasa Indonesia</th>
+        <th scope="col">Bahasa Inggris</th>
+        <!-- <th scope="col">Score</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in data %}
+        <tr scope="col">
+          {% if user %}
+            <td>{{ user.nrp }}</td>
+            <td>{{ user.nama }}</td>
+            {% if user.nrp[:3] == '001' %}
+              <td>{{kota[1]}}</td>
+            {% elif user.nrp[:3] == '002' %}
+              <td>{{kota[2]}}</td>
+            {% elif user.nrp[:3] == '003' %}
+              <td>{{kota[3]}}</td>
+            {% elif user.nrp[:3] == '004' %}
+              <td>{{kota[4]}}</td>
+            {% elif user.nrp[:3] == '005' %}
+              <td>{{kota[5]}}</td>
+            {% elif user.nrp[:3] == '006' %}
+              <td>{{kota[6]}}</td>
+            {% elif user.nrp[:3] == '007' %}
+              <td>{{kota[7]}}</td>
+            {% elif user.nrp[:3] == '008' %}
+              <td>{{kota[8]}}</td>
+            {% elif user.nrp[:3] == '009' %}
+              <td>{{kota[9]}}</td>
+            {% elif user.nrp[:3] == '010' %}
+              <td>{{kota[10]}}</td>
+            {% elif user.nrp[:3] == '011' %}
+              <td>{{kota[11]}}</td>
+            {% elif user.nrp[:3] == '012' %}
+              <td>{{kota[12]}}</td>
+            {% elif user.nrp[:3] == '013' %}
+              <td>{{kota[13]}}</td>
+            {% elif user.nrp[:3] == '014' %}
+              <td>{{kota[14]}}</td>
+            {% elif user.nrp[:3] == '015' %}
+              <td>{{kota[15]}}</td>
+            {% elif user.nrp[:3] == '016' %}
+              <td>{{kota[16]}}</td>
+            {% elif user.nrp[:3] == '017' %}
+              <td>{{kota[17]}}</td>
+            {% elif user.nrp[:3] == '018' %}
+              <td>{{kota[18]}}</td>
+            {% elif user.nrp[:3] == '019' %}
+              <td>{{kota[19]}}</td>
+            {% elif user.nrp[:3] == '020' %}
+              <td>{{kota[20]}}</td>
+            {% elif user.nrp[:3] == '021' %}
+              <td>{{kota[21]}}</td>
+            {% elif user.nrp[:3] == '022' %}
+              <td>{{kota[22]}}</td>
+            {% elif user.nrp[:3] == '023' %}
+              <td>{{kota[23]}}</td>
+            {% elif user.nrp[:3] == '024' %}
+              <td>{{kota[24]}}</td>
+            {% elif user.nrp[:3] == '025' %}
+              <td>{{kota[25]}}</td>
+            {% elif user.nrp[:3] == '026' %}
+              <td>{{kota[26]}}</td>
+            {% elif user.nrp[:3] == '027' %}
+              <td>{{kota[27]}}</td>
+            {% elif user.nrp[:3] == '028' %}
+              <td>{{kota[28]}}</td>
+            {% elif user.nrp[:3] == '029' %}
+              <td>{{kota[29]}}</td>
+            {% elif user.nrp[:3] == '030' %}
+              <td>{{kota[30]}}</td>
+            {% elif user.nrp[:3] == '031' %}
+              <td>{{kota[31]}}</td>
+            {% elif user.nrp[:3] == '032' %}
+              <td>{{kota[32]}}</td>
+            {% elif user.nrp[:3] == '033' %}
+              <td>{{kota[33]}}</td>
+            {% elif user.nrp[:3] == '034' %}
+              <td>{{kota[34]}}</td>
+            {% elif user.nrp[:3] == '035' %}
+              <td>{{kota[35]}}</td>
+            {% elif user.nrp[:3] == '036' %}
+              <td>{{kota[36]}}</td>
+            {% elif user.nrp[:3] == '037' %}
+              <td>{{kota[37]}}</td>
+            {% elif user.nrp[:3] == '038' %}
+              <td>{{kota[38]}}</td>
+            {% endif %}
+            <td>{{ user.mapel_0 }}</td>
+            <td>{{ user.mapel_1 }}</td>
+            <td>{{ user.mapel_2 }}</td>
+            <td>{{ user.mapel_3 }}</td>
+            <td>{{ user.mapel_4 }}</td>
+            <td>{{ user.mapel_5 }}</td>
+            <td>{{ user.mapel_6 }}</td>
+            <!-- <td>{{ user.id_mapel }}</td> -->
+            <!-- <td>{{ user.score }}</td> -->
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable();
+    });
+  </script>
+{% endblock %}
